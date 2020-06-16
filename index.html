@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Imprima' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home</title>
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/r/8/r8x0m06cqn.ico" type="image/x-icon" />
+
+  <style>
+    *, *::after, *::before {
+      box-sizing: border-box;
+    }
+
+    html {
+      align-items: center;
+      color: #ffc7eb;
+      display: flex;
+      font-family:'Verdana';
+	  font-size: 22px;
+      height: 100%;
+      height: 100%;
+      justify-content: center;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+	  background-color: #292928;
+      margin: 1em;
+      padding: 1em;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #8a8988 !important;
+    }
+
+    main {
+      margin: 0 1em;
+      min-width: 24em;
+    }
+
+    main nav {
+      display: grid;
+      grid-row-gap: 1em;
+      grid-template-columns: 1fr 1fr;
+      padding: 1em 0;
+    }
+
+    main ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    main li:first-child {		this is for the first item in <ul> 
+      font-weight: bold;
+      line-height: 2em;
+	  
+    }
+
+    img {
+	  border: 3px solid #4d4c4c;
+	  border-radius: 5%;
+	  height: auto;
+      object-fit: cover;
+      object-position: 50% 100%;
+      width: 10em;
+    }
+	
+	input {
+    height: inherit;
+    width: 95%;
+    background: #2e2e2e;
+    color: #9e9e9e;
+    font: 22px "Courier New", Courier, monospace;
+    font-weight: bold;
+    line-height: 2em;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    border-radius: 6px;
+    outline: none;
+    padding: 7px 14px;
+    font-size: 18;
+    grid-column: 1 / -1;
+    margin: 0;
+	}
+	
+<!--	.container {						*******This part is the CSS for a moving hamburger icon*******
+	  display: inline-block;
+	  cursor: pointer;
+	}
+
+	.bar1, .bar2, .bar3 {
+	  width: 35px;
+	  height: 5px;
+	  color: #ffc7eb;
+	  background-color: #333;
+	  margin: 6px 0;
+	  transition: 0.4s;
+	}
+
+	.change .bar1 {
+	  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	  transform: rotate(-45deg) translate(-9px, 6px);
+	}
+
+	.change .bar2 {opacity: 0;}
+
+	.change .bar3 {
+	  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+	  transform: -->
+  </style>
+</head>
+<body>
+  <main>
+    <h1>home</h1>
+	<input id="search-bar-input" placeholder="search">
+    
+    <nav>
+      <ul>
+        <li>General</li>
+        <li><a href="https://www.reddit.com/" target="_blank">reddit</a></li>
+        <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">inbox</a></li>
+		<li><a href="https://www.youtube.com/" target="_blank">youtube</a></li>
+      </ul>
+	
+     
+    </nav>
+  </main>
+
+  <img src="https://i.ibb.co/3TP4CJt/cosy.png">
+ <!-- <div class="container" onclick="myFunction(this)">	*******This part is the HTML for a moving hamburger icon*******
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  </div>
+
+<script>													*******This part is the Javascript for a moving hamburger icon*******
+function myFunction(x) {
+  x.classList.toggle("change");
+}-->
+<script>
+window.onload = function() {
+    this.initSearchBar()
+}
+
+function initSearchBar() {
+    document.getElementById("search-bar-input").value = ""
+    document.getElementById("search-bar-input").focus()
+
+    document.getElementById("search-bar-input").addEventListener("keypress", (event) => {
+        if (event.key != 'Enter') return
+
+        googleSearchUrl = "https://duckduckgo.com/?q="
+        query = document.getElementById("search-bar-input").value.replace(/\ /g, "+")
+        document.location = googleSearchUrl + query
+    })
+}
+</script>
+</body>
+</html>
