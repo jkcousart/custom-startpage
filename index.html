@@ -15,7 +15,7 @@
       align-items: center;
       color: #ffc7eb;
       display: flex;
-      font-family:'Verdana';
+      font: 22px/1 "Inconsolata", monospace;
 	  font-size: 22px;
       height: 100%;
       height: 100%;
@@ -98,6 +98,30 @@
     margin: 0;
 	}
 	
+	form {
+	margin: 1em;
+	position: relative;
+	}
+
+	form input[type="search"] {
+	background-color: rgba(255, 255, 255, 0.95);
+	border: none;
+	box-sizing: border-box;
+	font-weight: bold;
+	font: inherit;
+	width: 100%;
+	}
+
+	form label {
+	color: #1d81b2;
+	left: -1em;
+	position: absolute;
+	}
+
+	form:focus-within input::placeholder {
+	opacity: 0;
+	}
+
 <!--	.container {						*******This part is the CSS for a moving hamburger icon*******
 	  display: inline-block;
 	  cursor: pointer;
@@ -127,18 +151,43 @@
 <body>
   <main>
     <h1>home</h1>
-	<input id="search-bar-input" placeholder="search">
+	<form action="https://duckduckgo.com/" method="GET">
+	<label for="q">></label>
+	<input autofocus
+         id="q"
+         name="q"
+         type="search"
+         placeholder="search with duckduckgo...">
+	</form> 
     
     <nav>
-      <ul>
-        <li>General</li>
-	    <li><a href="https://192.168.0.220:8006/" target="_blank">server</a></li>
-        <li><a href="https://www.reddit.com/" target="_blank">reddit</a></li>
-        <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">inbox</a></li>
-	    <li><a href="https://www.youtube.com/" target="_blank">youtube</a></li>
-      </ul>
-	
      
+    <ul>
+      <li>> general</li>
+      <li><a href="https://www.reddit.com/" target="_blank">reddit</a></li>
+      <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">inbox</a></li>
+      <li><a href="https://www.youtube.com/" target="_blank">youtube</a></li>
+    </ul>
+
+    <ul>
+      <li>> education</li>
+      <li><a href="https://stpg.tk/">MDN</a></li>
+      <li><a href="https://www.theonion.com/">Stack Overflow</a></li>
+    </ul>
+
+    <ul>
+      <li>> network</li>
+      <li><a href="https://192.168.0.220:8006/" target="_blank">vm server</a></li>
+      <li><a href="http://pi.hole/admin/index.php" target="_blank">pihole</a></li>
+    </ul>
+
+    <ul>
+      <li>> misc.</li>
+      <li><a href="https://stpg.tk/">Moosic</a></li>
+      <li><a href="https://www.theonion.com/">Deluge Web</a></li>
+    </ul>
+	
+    
     </nav>
   </main>
 
